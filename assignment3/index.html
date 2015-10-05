@@ -59,8 +59,8 @@ var svg = d3.select("body")
         .attr("transform", 
               "translate(" + margin.left + "," + margin.top + ")");
 
-// Get the data
-d3.csv("data.csv", function(error, data) {
+    // Get the data
+    d3.csv("data.csv", function(error, data) {
     data.forEach(function(d) {
         d.date = parseDate(d.date);
         d.weight = +d.weight;
@@ -93,10 +93,8 @@ d3.csv("data.csv", function(error, data) {
         .call(yAxis);
         
     svg.append("text")
-     // .attr("transform", "rotate(-90)")
      .attr("y", margin.top - 50)
      .attr("x", margin.left - 65 )
-     // .attr("dy", "1em")
      .style("text-anchor", "middle")
      .text("Weight (lb)");
 
